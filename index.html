@@ -1,11 +1,198 @@
 <!DOCTYPE html>
-<html>
+<html lang="en">
 <head>
-    <title>Stephen Brady Contact Card</title>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Stephen Brady | CEO</title>
+  <style>
+    :root {
+      --bg: #0f1115;
+      --card: #171a21;
+      --text: #f5f7fb;
+      --muted: #b7bfcc;
+      --line: rgba(255,255,255,0.08);
+      --accent: #2d6cdf;
+      --accent-hover: #2458b7;
+    }
+
+    * { box-sizing: border-box; }
+
+    body {
+      margin: 0;
+      min-height: 100vh;
+      font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, Helvetica, Arial, sans-serif;
+      background:
+        radial-gradient(circle at top, rgba(45,108,223,0.18), transparent 30%),
+        linear-gradient(180deg, #0c0f14 0%, #11151c 100%);
+      color: var(--text);
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      padding: 24px;
+    }
+
+    .card {
+      width: 100%;
+      max-width: 460px;
+      background: rgba(23, 26, 33, 0.96);
+      border: 1px solid var(--line);
+      border-radius: 24px;
+      padding: 32px 28px;
+      box-shadow: 0 22px 60px rgba(0,0,0,0.35);
+      backdrop-filter: blur(10px);
+    }
+
+    .avatar {
+      width: 72px;
+      height: 72px;
+      border-radius: 18px;
+      background: linear-gradient(135deg, #2d6cdf, #4c87f0);
+      display: grid;
+      place-items: center;
+      font-size: 28px;
+      font-weight: 700;
+      letter-spacing: 0.04em;
+      margin-bottom: 18px;
+    }
+
+    h1 {
+      margin: 0;
+      font-size: 32px;
+      line-height: 1.05;
+      letter-spacing: -0.02em;
+    }
+
+    .title {
+      margin-top: 8px;
+      color: var(--muted);
+      font-size: 17px;
+    }
+
+    .company {
+      display: inline-block;
+      margin-top: 14px;
+      padding: 8px 12px;
+      border-radius: 999px;
+      border: 1px solid var(--line);
+      color: var(--text);
+      font-size: 14px;
+      background: rgba(255,255,255,0.03);
+    }
+
+    .actions {
+      display: grid;
+      gap: 12px;
+      margin-top: 26px;
+    }
+
+    .button {
+      display: block;
+      width: 100%;
+      text-align: center;
+      text-decoration: none;
+      padding: 15px 16px;
+      border-radius: 14px;
+      font-weight: 600;
+      transition: 0.2s ease;
+    }
+
+    .button.primary {
+      background: var(--accent);
+      color: white;
+    }
+
+    .button.primary:hover {
+      background: var(--accent-hover);
+    }
+
+    .button.secondary {
+      border: 1px solid var(--line);
+      color: var(--text);
+      background: rgba(255,255,255,0.03);
+    }
+
+    .button.secondary:hover {
+      background: rgba(255,255,255,0.06);
+    }
+
+    .info {
+      margin-top: 26px;
+      border-top: 1px solid var(--line);
+      padding-top: 20px;
+      display: grid;
+      gap: 16px;
+    }
+
+    .row {
+      display: grid;
+      gap: 4px;
+    }
+
+    .label {
+      color: var(--muted);
+      font-size: 12px;
+      text-transform: uppercase;
+      letter-spacing: 0.08em;
+    }
+
+    .value, .value a {
+      color: var(--text);
+      text-decoration: none;
+      font-size: 16px;
+      line-height: 1.45;
+    }
+
+    .footer {
+      margin-top: 24px;
+      color: var(--muted);
+      font-size: 13px;
+      text-align: center;
+    }
+
+    @media (max-width: 520px) {
+      .card {
+        padding: 28px 22px;
+        border-radius: 20px;
+      }
+
+      h1 {
+        font-size: 28px;
+      }
+    }
+  </style>
 </head>
 <body>
-    <h1>Contact Card for Stephen Brady</h1>
-    <p>Email: stephen@example.com</p>
-    <p>Phone: (555) 555-5555</p>
+  <main class="card">
+    <div class="avatar">SB</div>
+
+    <h1>Stephen Brady</h1>
+    <div class="title">CEO</div>
+    <div class="company">Leakshield</div>
+
+    <section class="actions">
+      <a class="button primary" href="stephen-brady.vcf" download>Save Contact</a>
+      <a class="button secondary" href="mailto:sbrady@leakshields.com">Send Email</a>
+      <a class="button secondary" href="tel:5025238253">Call 502-523-8253</a>
+    </section>
+
+    <section class="info">
+      <div class="row">
+        <div class="label">Email</div>
+        <div class="value"><a href="mailto:sbrady@leakshields.com">sbrady@leakshields.com</a></div>
+      </div>
+
+      <div class="row">
+        <div class="label">Phone</div>
+        <div class="value"><a href="tel:5025238253">502-523-8253</a></div>
+      </div>
+
+      <div class="row">
+        <div class="label">Address</div>
+        <div class="value">2318 Raintree Drive<br />Clarksville, IN 47129</div>
+      </div>
+    </section>
+
+    <div class="footer">Tap the button above to save Stephen’s contact information.</div>
+  </main>
 </body>
 </html>
